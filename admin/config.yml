@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: casiub/web
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Imagen Destacada", name: "image", widget: "image", required: false }
+      - { label: "Resumen", name: "summary", widget: "text", required: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }
